@@ -1,10 +1,15 @@
 import React from "react";
+import { Link } from "react-router";
 
 const Navbar = () => {
   const links = (
     <>
-      <li className="mr-4">Home</li>
-      <li className="mr-4">Listed Books</li>
+      <Link to={"/"}>
+        <li className="mr-4">Home</li>
+      </Link>
+      <Link to={"/listedBooks"}>
+        <li className="mr-4">Listed Books</li>
+      </Link>
       <li>Pages to Read</li>
     </>
   );
@@ -36,7 +41,16 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl font-bold">Book Vibe</a>
+        <a className="flex justify-center items-center mr-6 text-2xl font-bold">
+          <span className="text-red-600">B</span>
+          <span className="text-blue-600">oo</span>
+          <span className="text-green-600">k</span>
+          <span className="ml-2"> </span>
+          <span className="text-pink-600">V</span>
+          <span className="text-amber-400">i</span>
+          <span className="text-fuchsia-600">b</span>
+          <span className="text-lime-500">e</span>
+        </a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
