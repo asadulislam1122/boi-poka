@@ -3,7 +3,7 @@ import React from "react";
 const ListedBooks = () => {
   return (
     <div>
-      <h1 className="mt-4 font-bold text-2xl text-center">
+      <h1 className="mt-4 font-bold text-2xl text-center mb-[309px]">
         {" "}
         <span className="text-red-600">B</span>
         <span className="text-blue-600">oo</span>

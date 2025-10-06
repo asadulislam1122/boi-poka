@@ -1,13 +1,19 @@
 import React from "react";
 import { useLoaderData, useParams } from "react-router";
 import { FaStarHalfAlt } from "react-icons/fa";
+import { addToStore } from "../Utility/assToBD";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+
+const MySwal = withReactContent(Swal);
+
 const BookDetails = () => {
   const { id } = useParams();
   const idd = parseInt(id);
   //   console.log(id);
   const data = useLoaderData();
   const singleBook = data.find((book) => book.bookId === idd);
-  console.log(singleBook);
+  // console.log(singleBook);
 
   const {
     bookName,
@@ -23,8 +29,17 @@ const BookDetails = () => {
     review,
   } = singleBook;
   //   console.log(data.bookId);
+  // Local Store
+  const handleReedMark = (id) => {
+    MySwal.fire({
+      title: "Good job!",
+      text: "You clicked the button!",
+      icon: "success",
+    });
+    addToStore(id);
+  };
   return (
-    <div className=" mx-auto w-[700px] mb-2 p-2 m-4  border-2 border-gray-700 mt-4 rounded-xl shadow-xl shadow-blue-400 ">
+    <div className=" mx-auto md:w-[700px] mb-2 p-2 m-4  border-2 border-gray-700 mt-4 rounded-xl shadow-xl shadow-blue-400 ">
       <div className=" rounded-2xl bg-gray-200 flex justify-center">
         <img className="h-[300px]  w-[250px] mt-4 mb-4" src={image} alt="" />
       </div>
@@ -65,7 +80,9 @@ const BookDetails = () => {
       </div>
       {/* button */}
       <div className="flex justify-end mr-8 mt-4 gap-8 mb-4 ">
-        <button className="btn">Read</button>
+        <button onClick={() => handleReedMark(id)} className="btn">
+          Read
+        </button>
         <button className="btn">Wishlist</button>
       </div>
     </div>

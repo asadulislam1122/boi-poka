@@ -5,12 +5,15 @@ const Navbar = () => {
   const links = (
     <>
       <Link to={"/"}>
-        <li className="mr-4">Home</li>
+        <li className="mr-4 font-semibold">Home</li>
       </Link>
       <Link to={"/listedBooks"}>
-        <li className="mr-4">Listed Books</li>
+        <li className="mr-4 font-semibold">Listed Books</li>
       </Link>
-      <li>Pages to Read</li>
+      <Link to={"/readList"}>
+        {" "}
+        <li className="font-semibold">Read List</li>
+      </Link>
     </>
   );
   return (
@@ -41,7 +44,7 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <a className="flex justify-center items-center mr-6 text-2xl font-bold">
+        <a className="flex justify-center items-center text-2xl font-bold">
           <span className="text-red-600">B</span>
           <span className="text-blue-600">oo</span>
           <span className="text-green-600">k</span>
@@ -56,7 +59,7 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn mr-4 text-white bg-[#23BE0A]">Sign Up</a>
+        <a className="btn ml-6 mr-2 text-white bg-[#23BE0A]">Sign Up</a>
         <a className="btn text-white bg-[#59C6D2]">Sign Up</a>
       </div>
     </div>

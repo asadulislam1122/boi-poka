@@ -18,7 +18,7 @@ const Books = () => {
         <span className="text-blue-600">O</span>
         <span className="text-pink-600">K</span>
       </h1>
-      <div className="grid md:grid-cols-3 grid-cols-1 gap-4">
+      <div className="grid md:grid-cols-3 grid-cols-1">
         {allData.map((data) => (
           <Book key={data.bookId} data={data}></Book>
         ))}

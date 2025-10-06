@@ -13,7 +13,7 @@ const Book = ({ data }) => {
     yearOfPublishing,
     tags,
     bookId,
-  } = data;
+  } = data || {};
   return (
     <Link to={`/bookDtails/${bookId}`}>
       <div className="mb-2 p-2 m-4  border-2 border-gray-600 mt-4 rounded-xl shadow-xl shadow-gray-700 ">
@@ -32,7 +32,7 @@ const Book = ({ data }) => {
           <span>Book Name : </span>
           {bookName}
         </h2>
-        <p className="font-semibold text-[18px]">Author: {author}</p>
+        <p className="font-semibold text-[18px]">By: {author}</p>
         <div className="border-1 border-dashed mt-2 text-gray-500"></div>
         <div className=" flex justify-between items-center mt-3 ">
           <span className="font-semibold">Publisher: {publisher}</span>
