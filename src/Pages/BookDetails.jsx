@@ -80,10 +80,15 @@ const BookDetails = () => {
       </div>
       {/* button */}
       <div className="flex justify-end mr-8 mt-4 gap-8 mb-4 ">
-        <button onClick={() => handleReedMark(id)} className="btn">
+        <button
+          onClick={() => handleReedMark(id)}
+          className="btn bg-gradient-to-br from-blue-500 via-red-500 to-yellow-400"
+        >
           Read
         </button>
-        <button className="btn">Wishlist</button>
+        <button className="btn btn-outline bg-gradient-to-r from-orange-500 via-yellow-500 to-pink-500">
+          Wishlist
+        </button>
       </div>
     </div>
   );

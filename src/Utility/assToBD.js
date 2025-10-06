@@ -1,3 +1,6 @@
+import { GiToaster } from "react-icons/gi";
+import { toast } from "react-toastify";
+
 const gatSB = () => {
   const storeBSTR = localStorage.getItem("readList");
   if (storeBSTR) {
@@ -10,7 +13,15 @@ const gatSB = () => {
 const addToStore = (id) => {
   const storeBD = gatSB();
   if (storeBD.includes(id)) {
-    alert("Alredy Exit !!");
+    toast("Already Exists!", {
+      style: {
+        border: "1px solid #ff4d4d",
+        background: "#ffe6e6",
+        color: "#b30000",
+        fontWeight: "bold",
+      },
+      icon: "⚠️",
+    });
   } else {
     storeBD.push(id);
     const data = JSON.stringify(storeBD);
